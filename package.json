@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prepare": "husky install",
+    "prettier": "npx prettier --write .",
+    "lint:dev": "eslint ./src -c .eslintrc.json --max-warnings=0",
+    "test": "pnpm prettier && pnpm lint:dev && pnpm build"
   },
   "dependencies": {
     "@types/node": "20.6.3",
@@ -21,5 +25,13 @@
     "react-dom": "18.2.0",
     "tailwindcss": "3.3.3",
     "typescript": "5.2.2"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.7.2",
+    "@typescript-eslint/parser": "^6.7.2",
+    "eslint-config-prettier": "^9.0.0",
+    "husky": "^8.0.0",
+    "prettier": "^3.0.3",
+    "prettier-plugin-tailwindcss": "^0.5.4"
   }
 }
